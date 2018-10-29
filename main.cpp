@@ -39,11 +39,9 @@ int main() {
 		exit(EXIT_FAILURE);
 	}
 
+	int width;
+	int height;
 	float ratio;
-	int width = 800;
-	int height = 600;
-
-	ratio = (float)width / (float)height;
 
 	glfwMakeContextCurrent(window);
 
@@ -59,9 +57,11 @@ int main() {
 		glViewport(0, 0, width, height);
 		glClear(GL_COLOR_BUFFER_BIT);//Buffer enabled for color writing
 
+		ratio = (float)width / (float)height;
+
 		glMatrixMode(GL_PROJECTION);//Projection matrix stack
 		glLoadIdentity();
-		glOrtho(-ratio, ratio, -1.0f, 1.0f, -1.0f, 1.0f);//Projection
+		glOrtho(-1.0f, 1.0f, -1.0f, 1.0f, -1.0f, 1.0f);//Projection
 
 		glMatrixMode(GL_MODELVIEW);//Modelview matrix stack
 		glLoadIdentity();

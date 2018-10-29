@@ -25,7 +25,7 @@ void Circle::drawCircle(GLfloat x, GLfloat y) {
 	this->setColor();
 	for (int i = 0; i < 360; ++i) {
 		float degToRad = i * (3.14159 / 180.0);
-		glVertex2f(cos(degToRad) * this->radius + x, sin(degToRad) * this->radius + y);
+		glVertex2f(cos(degToRad) * this->radius * (3.0/4.0) + x, sin(degToRad) * this->radius + y);
 	}
 	glEnd();
 }
